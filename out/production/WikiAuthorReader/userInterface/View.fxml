@@ -1,0 +1,22 @@
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.RadioButton?>
+
+<GridPane fx:controller="userInterface.Controller" xmlns:fx="http://javafx.com/fxml" alignment="top_left" hgap="1" vgap="1">
+
+    <Button text="Search" GridPane.rowIndex="15" onAction= "#makeSearchURL"/>
+    <RadioButton fx:id="mostRecentButton" selected="true"  text="Sort By Most Recent Revisions" GridPane.rowIndex="20"/>
+    <RadioButton fx:id="mostActiveButton" text="Sort By Most Active Author" onAction="#selectButton" GridPane.rowIndex="25"/>
+    <TextField GridPane.rowIndex="10" maxWidth="200" fx:id="searchTermBox" onAction="#onEnter"/>
+    <ScrollPane GridPane.rowIndex="50" fx:id="mostRecentDisplayArea">
+        <Label GridPane.rowIndex="1" maxHeight="-Infinity" prefWidth="380" wrapText="true"
+               fx:id="rawChangesText"/>
+
+    </ScrollPane>
+    <Label GridPane.rowIndex="40" fx:id="redirectDisplay"/>
+
+</GridPane>
